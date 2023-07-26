@@ -204,6 +204,11 @@ void showQudsPopupMenu(
   );
   final NavigatorState navigator =
       Navigator.of(context, rootNavigator: useRootNavigator);
+
+  /// for remove focus
+  final focus = FocusManager.instance.primaryFocus;
+  focus?.unfocus();
+  
   Navigator.push(
       context,
       _PopupMenuRoute(
@@ -292,7 +297,7 @@ class _QudsPopupMenuState extends State<_QudsPopupMenu> {
             )
           ],
           borderRadius: borderRadius,
-          color:widget.backgroundColor  //_getCurrentBackgroundColor(context)
+          color: widget.backgroundColor //_getCurrentBackgroundColor(context)
           ),
       duration: const Duration(milliseconds: 500),
       child: result,
