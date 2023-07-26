@@ -28,6 +28,8 @@ class QudsPopupButton extends StatefulWidget {
 
   final Color? backgroundColor;
 
+  final Color? hoverColor;
+
   /// Create an instance of [QudsRadianButton].
   const QudsPopupButton(
       {Key? key,
@@ -36,6 +38,7 @@ class QudsPopupButton extends StatefulWidget {
       this.autofocus = false,
       this.mouseCursor,
       this.backgroundColor,
+      this.hoverColor,
       this.radius,
       this.tooltip,
       this.child})
@@ -65,6 +68,7 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
         autofocus: widget.autofocus,
         canRequestFocus: true,
         mouseCursor: widget.mouseCursor,
+        hoverColor: widget.hoverColor,
         child: widget.child,
         radius: widget.radius,
       ),
