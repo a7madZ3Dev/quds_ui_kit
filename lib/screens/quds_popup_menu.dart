@@ -28,7 +28,11 @@ class QudsPopupButton extends StatefulWidget {
 
   final Color? backgroundColor;
 
+  /// For my project
   final Color? hoverColor;
+
+  /// For my project
+  final Color? highlightColor;
 
   /// Create an instance of [QudsRadianButton].
   const QudsPopupButton(
@@ -39,6 +43,7 @@ class QudsPopupButton extends StatefulWidget {
       this.mouseCursor,
       this.backgroundColor,
       this.hoverColor,
+      this.highlightColor,
       this.radius,
       this.tooltip,
       this.child})
@@ -56,7 +61,7 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
     Widget result = Semantics(
       button: true,
       enabled: true,
-      child: InkResponse(
+      child: InkWell(
         onTap: () {
           showQudsPopupMenu(
             backgroundColor: widget.backgroundColor,
@@ -68,6 +73,7 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
         autofocus: widget.autofocus,
         canRequestFocus: true,
         mouseCursor: widget.mouseCursor,
+        highlightColor: widget.highlightColor,
         hoverColor: widget.hoverColor,
         child: widget.child,
         radius: widget.radius,
@@ -267,7 +273,7 @@ class _QudsPopupMenuState extends State<_QudsPopupMenu> {
                                 sections.last.titleText,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline5!
+                                    .headlineSmall!
                                     .copyWith(fontWeight: FontWeight.bold),
                               )
                             ],
