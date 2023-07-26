@@ -62,6 +62,12 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
       button: true,
       enabled: true,
       child: Container(
+        width: 50,
+        height: 50,
+        color: Colors.transparent,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+        ),
         child: InkWell(
           onTap: () {
             showQudsPopupMenu(
