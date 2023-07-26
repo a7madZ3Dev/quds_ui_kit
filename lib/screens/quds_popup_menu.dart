@@ -61,7 +61,7 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
     Widget result = Semantics(
       button: true,
       enabled: true,
-      child: Material(
+      child: Container(
         child: InkWell(
           onTap: () {
             showQudsPopupMenu(
@@ -75,7 +75,7 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
           canRequestFocus: true,
           mouseCursor: widget.mouseCursor,
           highlightColor: widget.highlightColor,
-          hoverColor: widget.hoverColor,
+          hoverColor: widget.hoverColor!.withOpacity(0.2),
           child: widget.child,
           radius: widget.radius,
         ),
