@@ -74,7 +74,7 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
         // canRequestFocus: true,
         mouseCursor: widget.mouseCursor,
         highlightColor: widget.highlightColor,
-        hoverColor: widget.hoverColor!.withOpacity(0.2),
+        hoverColor: widget.hoverColor!.withOpacity(0.1),
         icon: widget.icon!,
         // radius: widget.radius,
       ),
@@ -286,7 +286,11 @@ class _QudsPopupMenuState extends State<_QudsPopupMenu> {
 
     result = AnimatedContainer(
       decoration: BoxDecoration(
-          boxShadow: const [BoxShadow(blurRadius: 5, color: Colors.black38)],
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 5,
+            )
+          ],
           borderRadius: borderRadius,
           color: _getCurrentBackgroundColor(context)),
       duration: const Duration(milliseconds: 500),
