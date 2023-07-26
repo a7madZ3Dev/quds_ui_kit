@@ -322,7 +322,7 @@ class _QudsPopupMenuState extends State<_QudsPopupMenu> {
       }
     }
     result ??= widget.backgroundColor ?? result;
-    result ??= Theme.of(context).scaffoldBackgroundColor;
+    result ??= Colors.blueAccent;
     return result;
   }
 
