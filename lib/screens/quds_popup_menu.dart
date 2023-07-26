@@ -18,7 +18,7 @@ class QudsPopupButton extends StatefulWidget {
   final MouseCursor? mouseCursor;
 
   /// The child of this button.
-  final Widget? child;
+  final Widget? icon;
 
   /// The radius of the ink splash.
   final double? radius;
@@ -46,7 +46,7 @@ class QudsPopupButton extends StatefulWidget {
       this.highlightColor,
       this.radius,
       this.tooltip,
-      this.child})
+      this.icon})
       : assert(items.length > 0),
         super(key: key);
 
@@ -61,30 +61,22 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
     Widget result = Semantics(
       button: true,
       enabled: true,
-      child: Container(
-        width: 50,
-        height: 50,
-        color: Colors.transparent,
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-        ),
-        child: InkWell(
-          onTap: () {
-            showQudsPopupMenu(
-              backgroundColor: widget.backgroundColor,
-              context: context,
-              items: widget.items,
-            );
-          },
-          focusNode: widget.focusNode,
-          autofocus: widget.autofocus,
-          canRequestFocus: true,
-          mouseCursor: widget.mouseCursor,
-          highlightColor: widget.highlightColor,
-          hoverColor: widget.hoverColor!.withOpacity(0.2),
-          child: widget.child,
-          radius: widget.radius,
-        ),
+      child: IconButton(
+        onPressed: () {
+          showQudsPopupMenu(
+            backgroundColor: widget.backgroundColor,
+            context: context,
+            items: widget.items,
+          );
+        },
+        focusNode: widget.focusNode,
+        autofocus: widget.autofocus,
+        // canRequestFocus: true,
+        mouseCursor: widget.mouseCursor,
+        highlightColor: widget.highlightColor,
+        hoverColor: widget.hoverColor!.withOpacity(0.2),
+        icon: widget.icon!,
+        // radius: widget.radius,
       ),
     );
 
