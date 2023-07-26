@@ -9,10 +9,10 @@ class QudsPopupButton extends StatefulWidget {
   final List<QudsPopupMenuBase> items;
 
   /// The focus node of this button.
-  // final FocusNode? focusNode;
+  final FocusNode? focusNode;
 
-  // /// Weather this button occupies the focus automatically.
-  // final bool autofocus;
+  /// Weather this button occupies the focus automatically.
+  final bool autofocus;
 
   /// The mouse cursor of this button.
   final MouseCursor? mouseCursor;
@@ -38,8 +38,8 @@ class QudsPopupButton extends StatefulWidget {
   const QudsPopupButton(
       {Key? key,
       required this.items,
-      // this.focusNode,
-      // this.autofocus = false,
+      this.focusNode,
+      this.autofocus = false,
       this.mouseCursor,
       this.backgroundColor,
       this.hoverColor,
@@ -69,8 +69,8 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
             items: widget.items,
           );
         },
-        // focusNode: widget.focusNode,
-        // autofocus: widget.autofocus,
+        focusNode: widget.focusNode,
+        autofocus: widget.autofocus,
         // canRequestFocus: true,
         mouseCursor: widget.mouseCursor,
         highlightColor: widget.highlightColor,
@@ -206,9 +206,8 @@ void showQudsPopupMenu(
       Navigator.of(context, rootNavigator: useRootNavigator);
 
   /// for remove focus
-  final focus = FocusManager.instance.primaryFocus;
-  focus?.unfocus();
-  
+  FocusScope.of(context).requestFocus(null);
+
   Navigator.push(
       context,
       _PopupMenuRoute(
@@ -297,8 +296,7 @@ class _QudsPopupMenuState extends State<_QudsPopupMenu> {
             )
           ],
           borderRadius: borderRadius,
-          color: widget.backgroundColor //_getCurrentBackgroundColor(context)
-          ),
+          color: _getCurrentBackgroundColor(context)),
       duration: const Duration(milliseconds: 500),
       child: result,
     );
