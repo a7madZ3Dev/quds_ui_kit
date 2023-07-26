@@ -281,7 +281,7 @@ class QudsCollectionPagination<T> extends StatelessWidget {
 
   Widget _buildPageResultsCount(BuildContext context) {
     Widget result = QudsPopupButton(
-      child: Text(resultsPerPage.toString(),
+      icon: Text(resultsPerPage.toString(),
           style: const TextStyle(
               height: 1,
               color: Colors.white,
