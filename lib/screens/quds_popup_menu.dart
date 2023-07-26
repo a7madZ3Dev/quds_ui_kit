@@ -74,7 +74,7 @@ class _QudsPopupButtonState extends State<QudsPopupButton> {
         // canRequestFocus: true,
         mouseCursor: widget.mouseCursor,
         highlightColor: widget.highlightColor,
-        hoverColor: widget.hoverColor!.withOpacity(0.1),
+        hoverColor: widget.hoverColor!,
         icon: widget.icon!,
         // radius: widget.radius,
       ),
